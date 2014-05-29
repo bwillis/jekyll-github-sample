@@ -5,7 +5,17 @@ Two Jekyll Liquid tags to display a code sample from a file in a public Github r
 
 # Install
 
-Add the github_sample_tag.rb file to your Jekyll project _plugins directory.
+- First add the gem to your `Gemfile` 
+```
+gem 'jekyll_github_sample'
+```
+- `bundle` to install the gem
+- Add the gem to your Jekyll `_config.yml`
+
+```
+gems: [jekyll_github_sample]
+```
+- Startup or relaunch Jekyll
 
 # Live Examples
 
@@ -13,19 +23,19 @@ A [write up](https://bwillis.github.io/2014/05/28/include-github-repo-code-in-je
 
 # github_sample Usage
 ```
-github_sample URL_WITH_USERNAME_REPO_AND_FILE <START_LINE_NUMBER> <END_LINE_NUMBER>
+{% github_sample URL_WITH_USERNAME_REPO_AND_FILE <START_LINE_NUMBER> <END_LINE_NUMBER> %}
 ```
 
- * URL_WITH_USERNAME_REPO_AND_FILE - the full path to the Github repo file, prefer a file with the commitish in it so it won't change when recompiling occurs
+ * URL_WITH_USERNAME_REPO_AND_FILE - the relative path to the Github repo file, prefer a file with the commitish in it so it won't change when recompiling occurs. A url to this README would be: `bwillis/jekyll-github-sample/blob/a3bc9e82412d364aa76e9308ab53ff2bddaa2faf/README.md`
  * START_LINE_NUMBER - (optional) number that is the first line to include (0 based)
  * END_LINE_NUMBER - (optional) number that is the last line to include, if excluded will read to end of file
 
-# github_reference Usage
+# github_sample_ref Usage
 ```
 {% github_sample_ref URL_WITH_USERNAME_REPO_AND_FILE %}
 ```
 
- * URL_WITH_USERNAME_REPO_AND_FILE - the full path to the Github repo file, prefer a file with the commitish in it so it won't change when recompiling occurs
+ * URL_WITH_USERNAME_REPO_AND_FILE - the relative path to the Github repo file, prefer a file with the commitish in it so it won't change when recompiling occurs. A url to this README would be: `bwillis/jekyll-github-sample/blob/a3bc9e82412d364aa76e9308ab53ff2bddaa2faf/README.md`
 
 # Example Usage
 
