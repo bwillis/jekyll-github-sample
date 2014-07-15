@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
   s.authors     = ['Ben Willis']
   s.email       = ['benjamin.willis@gmail.com']
-  s.homepage    = 'http://bwillis.github.io/jekyll-github-sample'
+  s.homepage    = 'https://github.com/bwillis/jekyll-github-sample'
   s.summary     = %q{Include a sample of a Github repo file.}
   s.description = %q{Easily reference and include a Github repo file in your post.}
 
