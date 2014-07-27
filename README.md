@@ -47,3 +47,12 @@ This is how you would display, reference and highlight code in your Jekyll post.
 {% github_sample /bwillis/versioncake/989237901cb873f96df12be48cbf1239be496bd7/Appraisals 0 5 %}
 {% endhighlight %}
 ```
+
+# Thanks!
+
+Thanks to all those who have helped make this really awesome:
+
+* [heedfull](https://github.com/heedfull)
+
+# License
+Jekyll Github Sample is released under the MIT license: www.opensource.org/licenses/MIT
