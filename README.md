@@ -5,7 +5,7 @@ Two Jekyll Liquid tags to display a code sample from a file in a public Github r
 
 # Install
 
-- First add the gem to your `Gemfile` 
+- First add the gem to your `Gemfile`
 ```
 gem 'jekyll_github_sample'
 ```
@@ -29,6 +29,16 @@ A [write up](https://bwillis.github.io/2014/05/28/include-github-repo-code-in-je
  * URL_WITH_USERNAME_REPO_AND_FILE - the relative path to the Github repo file, prefer a file with the commitish in it so it won't change when recompiling occurs. A url to this README would be: `bwillis/jekyll-github-sample/blob/a3bc9e82412d364aa76e9308ab53ff2bddaa2faf/README.md`
  * START_LINE_NUMBER - (optional) number that is the first line to include (0 based)
  * END_LINE_NUMBER - (optional) number that is the last line to include, if excluded will read to end of file
+
+One can also specify the lines to include based on markings in the file itself.
+This is done by invoking
+
+```
+{% github_sample URL_WITH_USERNAME_REPO_AND_FILE tag:TAG_NAME %}
+```
+
+and placing the strings `[START TAG_NAME]` and `[END TAG_NAME]` anywhere in the lines immediately before and after the content you wish to include.
+
 
 # github_sample_ref Usage
 ```

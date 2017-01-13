@@ -11,7 +11,6 @@ module JekyllGithubSample
     def initialize(tag_name, params, tokens)
       github_file_path, @line_start, @line_end = params.split
       @github_file                             = FileHelper.new(github_file_path)
-      @line_start, @line_end                   = determine_line_numbers(@line_start, @line_end)
       super
     end
 
@@ -19,7 +18,12 @@ module JekyllGithubSample
       all_lines = cache.fetch(@github_file.raw_uri) do
         open(@github_file.raw_uri).readlines
       end
-      lines     = all_lines[@line_start..@line_end]
+      if @line_start.respond_to?(:match) and tag_match = @line_start.match(/^tag:(.*)/)
+        lines     = extract_tagged_lines(all_lines, tag_match[1])
+      else
+        @line_start, @line_ends     = determine_line_numbers(@line_start, @line_end)
+        lines     = all_lines[@line_start..@line_end]
+      end
       lines     = remove_common_indentation(lines)
       lines.join
     end
