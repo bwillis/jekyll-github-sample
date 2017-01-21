@@ -33,4 +33,24 @@ describe JekyllGithubSample::TextUtils do
     end
   end
 
+  context '#extract_tagged_lines' do
+    let(:lines) { [
+        'header',
+        '[START tag]',
+        'content 1',
+        'content 2',
+        '[END tag]',
+        'footer 1',
+        'footer 2'
+    ] }
+    subject { text_utils.extract_tagged_lines(lines, 'tag') }
+
+    it 'extracts content' do
+      should =~ [
+        'content 1',
+        'content 2'
+      ]
+    end
+  end
+
 end
