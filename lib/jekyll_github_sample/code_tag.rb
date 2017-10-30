@@ -21,7 +21,7 @@ module JekyllGithubSample
       if @line_start.respond_to?(:match) and tag_match = @line_start.match(/^tag:(.*)/)
         lines     = extract_tagged_lines(all_lines, tag_match[1])
       else
-        @line_start, @line_ends     = determine_line_numbers(@line_start, @line_end)
+        @line_start, @line_end = determine_line_numbers(@line_start, @line_end)
         lines     = all_lines[@line_start..@line_end]
       end
       lines     = remove_common_indentation(lines)
