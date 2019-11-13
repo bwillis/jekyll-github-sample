@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {spec}/*`.split('\n')
   s.require_paths = ['lib']
 
-  s.add_dependency 'activesupport', '~> 4.0'
-  s.add_dependency 'jekyll',        '~> 3.0'
+  s.add_dependency 'activesupport', '>= 4.0', '< 7.0'
+  s.add_dependency 'jekyll',        '>= 3.0', '< 5.0'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'bundler'
