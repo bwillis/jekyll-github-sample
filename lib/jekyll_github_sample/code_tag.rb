@@ -16,7 +16,7 @@ module JekyllGithubSample
 
     def render(context)
       all_lines = cache.fetch(@github_file.raw_uri) do
-        open(@github_file.raw_uri).readlines
+        URI.open(@github_file.raw_uri).readlines
       end
       if @line_start.respond_to?(:match) and tag_match = @line_start.match(/^tag:(.*)/)
         lines     = extract_tagged_lines(all_lines, tag_match[1])
